@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliferfy - Burger Bros</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon">
+</head>
+
+<body id="body" onload="renderDishes()" onscroll="setActiveFilterAtFilterScrollbar()">
+    <header>
+        <div class="header-icon-box">
+            <img onclick="comingSoon()" class="arrow-back" src="img/arrow-back.png">
+            <div onclick="scrollToTop()" class="header-icon">
+                <img src="img/main-icon.png">
+                <h1>Deliferfy</h1>
+            </div>
+        </div>
+        <div class="adress-box">
+            <span onclick="comingSoon()" class="adress">Musterstr. 123, 12345 Musterstadt</span>
+        </div>
+        <div>
+            <img onclick="comingSoon()" class="language d-none" src="img/german.png">
+            <img onclick="comingSoon()" class="language" src="img/english.png">
+        </div>
+    </header>
+
+    <main>
+        <div class="restaurant-content">
+            <div>
+                <img class="mainimg" src="img/mainimg.jpg">
+                <div class="restaurant-icon-section">
+                    <div class="restaurant-icon"><img src="img/hamburger.png"></div>
+                </div>
+            </div>
+            <div class="restaurant-header">
+                <div>
+                    <h2>Burger Bros</h2>
+                    <div class="like-stars">
+                        <img src="img/star.png">
+                        <a href="" onclick="comingSoon()">(341 Bewertungen)</a>
+                    </div>
+                    <div class="delivery-conditions">
+                        <div class="delivery-conditions-box">
+                            <img src="img/clock.png"><span>ab 12:00</span>
+                        </div>
+                        <div class="delivery-conditions-box">
+                            <img src="img/bike.png"><span>1,50 €</span>
+                        </div>
+                        <div class="delivery-conditions-box">
+                            <img src="img/shoppingcart-small.png"><span>min. 10,00 €</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-header-buttons">
+                    <div onclick="comingSoon()" class="info-button"><img src="img/info.png"></div>
+                    <div onclick="comingSoon()" class="like-button"><img src="img/heart.png"></div>
+                </div>
+            </div>
+            <div id="dishes-scrollbar" class="dishes-scrollbar">
+                <img src="img/search.png">
+                <button onclick="scrollToPopular()" id="popular" class="active-filter">Beliebte Gerichte</button>
+                <button onclick="scrollToBeefBurgers()" id="beef-burgers">Beef Burger</button>
+                <button onclick="scrollToChickenBurgers()" id="chicken-burgers">Chicken Burger</button>
+                <button onclick="scrollToVeganBurgers()" id="vegan-burgers">Vegan Burger</button>
+                <button onclick="scrollToExtras()" id="extras">Beilagen</button>
+                <button onclick="scrollToDesserts()" id="dessert">Dessert</button>
+                <button onclick="scrollToDrinks()" id="drinks">Getränke</button>
+            </div>
+            <div class="dishes-main-box-center">
+                <div>
+                    <div class="dishes-headline-no-span">
+                        <h3 id="popular-heading">Beliebte Gerichte</h3>
+                    </div>
+                    <div id="popular-dish-section"></div>
+                    <div class="dishes-headline">
+                        <h3 id="beef-burger-heading">Beef Burgers</h3>
+                        <span>Alle Burger werden mit 150g Ringfleisch zubereitet.</span>
+                    </div>
+                    <div id="beef-burger-section"></div>
+                    <div class="dishes-headline">
+                        <h3 id="chicken-burger-heading">Chicken Burgers</h3>
+                        <span>Alle Burger werden mit 150g Hühnchenbrust zubereitet.</span>
+                    </div>
+                    <div id="chicken-burger-section"></div>
+                    <div class="dishes-headline">
+                        <h3 id="vegan-burger-heading">Vegan Burgers</h3>
+                        <span>Alle Burger werden mit 150g vaganem Patty oder Gemüse zubereitet.</span>
+                    </div>
+                    <div id="vegan-burger-section"></div>
+                    <div class="dishes-headline-no-span">
+                        <h3 id="extras-heading">Beilagen</h3>
+                    </div>
+                    <div id="extras-section"></div>
+                    <div class="dishes-headline-no-span">
+                        <h3 id="dessert-heading">Desserts</h3>
+                    </div>
+                    <div id="desserts-section"></div>
+                    <div class="dishes-headline">
+                        <h3 id="drinks-heading">Getränke</h3>
+                        <span>Alle Getränke werde in einer Größe von 0,4l serviert.</span>
+                    </div>
+                    <div id="drinks-section"></div>
+                </div>
+            </div>
+        </div>
+        <div class="shopping-cart-box" id="shopping-cart-box">
+            <div class="shopping-cart-section">
+                <div class="shopping-cart">
+                    <h3>Warenkorb<img onclick="closeResponsivShoppingCart()" class="close-responsiv-shopping-cart"
+                            src="img/x-mark.png"></h3>
+                    <div id="shopping-cart"></div>
+                    <div id="minimum-order-value-section" class="minimum-order-value-section d-none">
+                        <div class="minimum-order-value-box">
+                            <span class="minimum-order-value-text text-color">Benötigter Betrag, um den
+                                Mindestbestellwert zu
+                                erreichen</span>
+                            <div class="minimum-order-value-price-box">
+                                <span id="minimum-order-value" class="minimum-order-value-price text-color"></span>
+                                <span class="minimum-order-value-price text-color">&nbsp;€</span>
+                            </div>
+                        </div>
+                        <span class="minimum-order-value-description">Leider kannst du noch nicht bestellen. Burger Bros
+                            liefert erst ab einem
+                            Mindestbestellwert von 10,00 € (exkl. Lieferkosten).</span>
+                    </div>
+                    <div id="checkout" class="checkout d-none">
+                        <table>
+                            <tr>
+                                <td class="text-color">Zwischensumme</td>
+                                <td class="direction text-color">€ <span id="subtotalPrice"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-color">Lieferkosten</td>
+                                <td class="direction text-color">€ 1.50</td>
+                            </tr>
+                            <tr>
+                                <td class="text-color bolt-text">Gesamt</td>
+                                <td class="direction text-color bolt-text">€ <span id="total"></span></td>
+                            </tr>
+                        </table>
+                        <button id="checkout-button" onclick="comingSoon()" disabled class="checkout-button">
+                            Bezahlen (<span id="to-pay"></span> €)
+                        </button>
+                    </div>
+                </div>
+                <div id="shopping-cart-placeholder" class="shopping-cart-placeholder">
+                    <img src="img/cart.png">
+                    <span class="shopping-cart-placeholder-heading text-color">Fülle deinen Warenkorb</span>
+                    <span class="shopping-cart-placeholder-text">Füge einige leckere Gerichte aus der Speisekarte
+                        hinzu und bestelle dein Essen.</span>
+                </div>
+            </div>
+        </div>
+        <button id="checkout-button-responsiv" onclick="openResponsivShoppingCart()"
+            class="checkout-button-responsiv d-none">
+            <div class="checkout-button-responsiv-icon">
+                <img src="img/shoppingcart-responsiv.png">
+                <div class="amount-shopping-cart">
+                    <span id="amount-shopping-cart"></span>
+                </div>
+            </div>
+            <div class="checkaot-button-responsive-text">
+                Bezahlen (<span id="to-pay-responsive"></span> €)
+            </div>
+        </button>
+    </main>
+
+</body>
+
+</html>

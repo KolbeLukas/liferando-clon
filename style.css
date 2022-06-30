@@ -1,0 +1,676 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fb6100;
+    padding: 12px 8px 12px 8px;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.header-icon-box {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-back {
+    cursor: pointer;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-icon img {
+    height: 36px;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-left: 6px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    color: #0A3847;
+}
+
+h3 {
+    margin-inline: 16px;
+    color: #0A3847;
+}
+
+button {
+    font-family: 'Roboto';
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.adress {
+    padding-bottom: 6px;
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
+
+.language {
+    height: 32px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 100%;
+    transition: all 125ms ease-in-out;
+}
+
+.language:hover {
+    border: 3px solid white;
+}
+
+main {
+    display: flex;
+}
+
+.restaurant-content {
+    width: calc(100% - 350px);
+    margin-bottom: 70px;
+}
+
+.mainimg {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.restaurant-icon-section {
+    display: flex;
+    justify-content: center;
+    margin-top: -74px;
+}
+
+.restaurant-icon {
+    height: 140px;
+    width: 140px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    box-shadow: 0px 0px 6px 0px rgb(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restaurant-icon img {
+    height: 85px;
+}
+
+.restaurant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 16px;
+    margin-top: -64px;
+    margin-bottom: 12px;
+}
+
+.like-stars {
+    display: flex;
+    align-items: flex-start;
+}
+
+.like-stars a {
+    margin-left: 12px;
+    color: #fb6100;
+}
+
+.delivery-conditions {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    color: #999999;
+    font-size: 0.8em;
+}
+
+.delivery-conditions-box {
+    display: flex;
+    align-items: flex-end;
+}
+
+.delivery-conditions img {
+    height: 16px;
+    margin-right: 2px;
+}
+
+.delivery-conditions span {
+    margin-right: 10px;
+}
+
+.restaurant-header-buttons {
+    display: flex;
+}
+
+.info-button {
+    padding: 14px;
+    height: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: -1px;
+    transition: all 125ms ease-in-out;
+}
+
+.info-button:hover {
+    border: 1px solid #146EEB;
+    z-index: 1;
+}
+
+.like-button {
+    padding: 14px;
+    height: 20px;
+    border: 1px solid lightgrey;
+    transition: all 125ms ease-in-out;
+}
+
+.like-button:hover {
+    border: 1px solid #FF7F01;
+}
+
+.dishes-scrollbar {
+    background-color: #F8F5F2;
+    padding-inline: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    white-space: nowrap;
+    position: sticky;
+    top: 66px;
+}
+
+.dishes-scrollbar img {
+    margin-right: 12px;
+}
+
+.dishes-scrollbar button {
+    margin-inline: 10px;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: #F8F5F2;
+    color: #0A3847;
+}
+
+.active-filter {
+    background-color: #fb6100 !important;
+    color: white !important;
+}
+
+.dishes-main-box-center {
+    display: flex;
+    justify-content: center;
+    padding-inline: 16px;
+}
+
+.dishes-headline-no-span {
+    background-color: #F8F5F2;
+    border-radius: 2px;
+    padding-bottom: 16px;
+}
+
+.dishes-headline-no-span h3 {
+    margin-bottom: 0;
+    padding-top: 16px;
+}
+
+.dishes-headline {
+    background-color: #F8F5F2;
+    border-radius: 2px;
+    padding-bottom: 16px;
+}
+
+.dishes-headline h3 {
+    padding-top: 16px;
+    margin-bottom: 4px;
+}
+
+.dishes-headline span {
+    margin-left: 16px;
+    color: #0a3847;
+    font-size: 0.75em;
+}
+
+.dish-box {
+    border: 1px solid rgba(211, 211, 211, 0.5);
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+}
+
+.dish-box:hover {
+    border: 1px solid #146EEB;
+}
+
+.dish-box-headline {
+    display: flex;
+    align-items: baseline;
+}
+
+.dish-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.dish-infos {
+    color: #146eeb85;
+    font-size: 0.7em;
+    cursor: pointer;
+}
+
+.dish-infos:hover {
+    text-decoration: underline;
+}
+
+.dish-description {
+    margin-left: 16px;
+    font-size: 0.85em;
+    color: #999999;
+}
+
+.dish-price {
+    margin-left: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 1.1em;
+    color: #fb6100;
+}
+
+.dish-add-button {
+    padding: 10px;
+    padding: 10px;
+    border: 1px solid rgba(211, 211, 211, 0.5);
+    margin-right: -1px;
+    margin-top: -1px;
+}
+
+.shopping-cart-section {
+    position: sticky;
+    top: 66px;
+    width: 350px;
+    height: calc(100vh - 66px);
+    z-index: 2;
+    box-shadow: 0px 0px 6px 0 rgb(0 0 0 / 20%);
+}
+
+.shopping-cart-section h3 {
+    text-align: center;
+    margin-inline: 0;
+    margin-bottom: 0;
+    padding-bottom: 16px;
+    margin-top: 0;
+    padding-top: 16px;
+    border-bottom: 1px solid rgb(211 211 211 / 50%);
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+}
+
+.shopping-cart {
+    max-height: 92vh;
+    overflow-y: auto;
+}
+
+.shopping-cart-dish-box {
+    padding: 16px 16px 8px 16px;
+}
+
+.shopping-cart-dish-box-inner {
+    position: relative;
+    padding-inline: 26px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgb(211 211 211 / 50%);
+}
+
+.shopping-cart-amount {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    font-weight: 700;
+}
+
+.shopping-cart-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #0a3847;
+    font-size: 0.9em;
+}
+
+.shopping-cart-dish {
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: #0A3847;
+}
+
+.shopping-cart-change {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart-note {
+    color: #146EEB;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.shopping-cart-change-amount {
+    display: flex;
+}
+
+.shopping-cart-change-amount-button {
+    height: 18px;
+    padding: 8px;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+}
+
+.margin-right {
+    margin-right: 8px;
+}
+
+.shopping-cart-change-amount-button:hover {
+    border: 1px solid #146EEB;
+}
+
+.shopping-cart-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-inline: 16px;
+}
+
+.shopping-cart-placeholder img {
+    margin-top: 70px;
+    margin-bottom: 16px;
+}
+
+.shopping-cart-placeholder-heading {
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.shopping-cart-placeholder-text {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.minimum-order-value-section {
+    padding: 8px 16px 16px 16px;
+}
+
+.minimum-order-value-box {
+    background-color: #FFECB3;
+    padding: 16px;
+    display: flex;
+    margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.minimum-order-value-text {
+    font-size: 0.8em;
+}
+
+.minimum-order-value-price {
+    font-size: 0.9em;
+}
+
+.minimum-order-value-price-box {
+    display: flex;
+}
+
+.minimum-order-value-description {
+    font-size: 0.72em;
+    color: #0a3847;
+}
+
+.checkout {
+    padding: 32px 8px 16px 8px;
+    border-top: 1px solid rgb(211 211 211 / 20%);
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+    font-size: 0.9em;
+}
+
+td {
+    padding-bottom: 8px;
+}
+
+.checkout-button {
+    text-align: center;
+    background-color: #ebebeb;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-top: 8px;
+    width: 100%;
+    border: none;
+    font-weight: 700;
+    color: #666;
+    cursor: default;
+}
+
+.checkout-button-enough {
+    background-color: #125fca;
+    color: white;
+    cursor: pointer;
+    transition: background-color 125ms ease-in-out;
+}
+
+.checkout-button-enough:hover {
+    background-color: #146eeb;
+}
+
+.close-responsiv-shopping-cart {
+    display: none;
+}
+
+.checkout-button-responsiv {
+    display: none;
+}
+
+.checkaot-button-responsive-text {
+    width: 100%;
+}
+
+.amount-shopping-cart {
+    position: relative;
+    top: 7px;
+    left: -10px;
+    background-image: url(img/circle.png);
+    height: 22px;
+    width: 22px;
+    background-size: contain;
+    line-height: 23px;
+}
+
+.checkout-button-responsiv-icon {
+    display: flex;
+}
+
+.direction {
+    direction: rtl;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-all {
+    display: block !important;
+}
+
+.stop-overflow {
+    overflow: hidden;
+}
+
+.text-color {
+    color: #0a3847;
+}
+
+.bolt-text {
+    font-weight: 700;
+}
+
+
+@media (max-width: 1000px) {
+    .restaurant-content {
+        width: 100%;
+    }
+
+    .shopping-cart {
+        max-height: 100vh;
+    }
+
+    .shopping-cart-box {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        z-index: 1;
+    }
+
+    .shopping-cart-section {
+        position: initial;
+        width: initial;
+        box-shadow: none;
+    }
+
+    .shopping-cart-section h3 {
+        text-align: initial;
+        padding-left: 16px;
+    }
+
+    .close-responsiv-shopping-cart {
+        display: initial;
+        position: absolute;
+        right: 16px;
+        cursor: pointer;
+    }
+
+    .shopping-cart-dish-box {
+        margin-inline: 10%;
+    }
+
+    .minimum-order-value-section {
+        margin-inline: 10%;
+    }
+
+    .checkout-button-responsiv {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        bottom: 6px;
+        left: 6px;
+        right: 6px;
+        text-align: center;
+        background-color: #125fca;
+        padding: 16px;
+        border: none;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        transition: background-color 125ms ease-in-out;
+    }
+
+    .checkout-button-responsiv:hover {
+        background-color: #146eeb;
+    }
+
+}
+
+@media (max-width: 720px) {
+    h1 {
+        display: none;
+    }
+
+    .adress-box {
+        max-width: 60%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-bottom: 8px;
+    }
+
+    .mainimg {
+        height: 180px;
+    }
+
+    .restaurant-icon-section {
+        margin-top: -62px;
+    }
+
+    .restaurant-icon {
+        height: 110px;
+        width: 110px;
+    }
+
+    .restaurant-icon img {
+        height: 70px;
+    }
+
+    .restaurant-header {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .like-stars {
+        flex-direction: column;
+    }
+
+    .like-stars a {
+        margin-left: 0;
+    }
+
+    .delivery-conditions {
+        flex-wrap: wrap;
+    }
+
+    .shopping-cart-dish-box {
+        margin-inline: 0;
+    }
+
+    .minimum-order-value-section {
+        margin-inline: 0;
+    }
+}
