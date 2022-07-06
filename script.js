@@ -521,7 +521,7 @@ function renderOneDishBox(i) {
         <div class="dish-text">
             <div class="dish-box-headline">
                 <h3>${dishes[i]['name']}</h3>
-                <span onclick="comingSoon()" class="dish-infos">Produktinfo</span>
+                <span onclick="comingSoon(event)" class="dish-infos">Produktinfo</span>
             </div>
             <span class="dish-description"><i>${dishes[i]['description']}</i></span>
             <span class="dish-price">${dishes[i]['price']} €</span>
@@ -542,7 +542,7 @@ function renderClickedDishInShoppingCart(i) {
                 <div class="shopping-cart-dish">${shoppingCartName[i]}</div>
                 <div class="shopping-cart-price">${shoppingCartPrice[i].toFixed(2)} €</div>
                     <div class="shopping-cart-change">
-                    <div onclick="comingSoon()" class="shopping-cart-note">Anmerkung hinzufügen</div>
+                    <div onclick="comingSoon(event)" class="shopping-cart-note">Anmerkung hinzufügen</div>
                     <div class="shopping-cart-change-amount">
                     <div onclick="reduceSelectedDishByOne(${i})" class="shopping-cart-change-amount-button margin-right">
                         <img src="img/minus.png">
@@ -559,6 +559,7 @@ function renderClickedDishInShoppingCart(i) {
 
 /* WORK IN PROGRESS */
 
-function comingSoon() {
+function comingSoon(event) {
+    event.stopPropagation();
     alert('Wir arbeiten an weitern Funktionen für euch.');
 }

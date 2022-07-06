@@ -15,18 +15,18 @@
 <body id="body" onload="renderDishes()" onscroll="setActiveFilterAtFilterScrollbar()">
     <header>
         <div class="header-icon-box">
-            <img onclick="comingSoon()" class="arrow-back" src="img/arrow-back.png">
+            <img onclick="comingSoon(event)" class="arrow-back" src="img/arrow-back.png">
             <div onclick="scrollToTop()" class="header-icon">
                 <img src="img/main-icon.png">
                 <h1>Deliferfy</h1>
             </div>
         </div>
         <div class="adress-box">
-            <span onclick="comingSoon()" class="adress">Musterstr. 123, 12345 Musterstadt</span>
+            <span onclick="comingSoon(event)" class="adress">Musterstr. 123, 12345 Musterstadt</span>
         </div>
         <div>
-            <img onclick="comingSoon()" class="language d-none" src="img/german.png">
-            <img onclick="comingSoon()" class="language" src="img/english.png">
+            <img onclick="comingSoon(event)" class="language d-none" src="img/german.png">
+            <img onclick="comingSoon(event)" class="language" src="img/english.png">
         </div>
     </header>
 
@@ -43,7 +43,7 @@
                     <h2>Burger Bros</h2>
                     <div class="like-stars">
                         <img src="img/star.png">
-                        <a href="" onclick="comingSoon()">(341 Bewertungen)</a>
+                        <a href="" onclick="comingSoon(event)">(341 Bewertungen)</a>
                     </div>
                     <div class="delivery-conditions">
                         <div class="delivery-conditions-box">
@@ -58,8 +58,8 @@
                     </div>
                 </div>
                 <div class="restaurant-header-buttons">
-                    <div onclick="comingSoon()" class="info-button"><img src="img/info.png"></div>
-                    <div onclick="comingSoon()" class="like-button"><img src="img/heart.png"></div>
+                    <div onclick="comingSoon(event)" class="info-button"><img src="img/info.png"></div>
+                    <div onclick="comingSoon(event)" class="like-button"><img src="img/heart.png"></div>
                 </div>
             </div>
             <div id="dishes-scrollbar" class="dishes-scrollbar">
@@ -144,7 +144,7 @@
                                 <td class="direction text-color bolt-text">€ <span id="total"></span></td>
                             </tr>
                         </table>
-                        <button id="checkout-button" onclick="comingSoon()" disabled class="checkout-button">
+                        <button id="checkout-button" onclick="comingSoon(event)" disabled class="checkout-button">
                             Bezahlen (<span id="to-pay"></span> €)
                         </button>
                     </div>
